@@ -11,8 +11,9 @@ app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
 
 @app.route("/")
 def index():
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Louise.jpg')
-    return render_template("index.html", user_image = full_filename)
+    louise_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Louise.jpg')
+    penny_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Penny.jpg')
+    return render_template("index.html", louise_image = louise_filename, penny_image = penny_filename)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
